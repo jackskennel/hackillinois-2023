@@ -16,7 +16,7 @@
         android:theme="@style/Theme.AppSplash"
         android:allowBackup="true">
         <meta-data android:name="com.google.android.geo.API_KEY"
-            android:value="${GMP_KEY}"
+            android:value="${googleMapsApiKey}"
             />
         <activity
             android:name="com.hackillinois.snapchatUIComposeClone.common.MainActivity"

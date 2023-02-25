@@ -21,6 +21,13 @@ android {
         vectorDrawables {
             useSupportLibrary true
         }
+
+        // Load credentials.
+        def properties = new Properties()
+        file("../local.properties").withInputStream { properties.load(it) }
+
+        // Share the key with your `AndroidManifest.xml`
+        manifestPlaceholders = [ googleMapsApiKey:"${properties.getProperty('google.maps_api_key')}"]
     }
 
     buildTypes {
