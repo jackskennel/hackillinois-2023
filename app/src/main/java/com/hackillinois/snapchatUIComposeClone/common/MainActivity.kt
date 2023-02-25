@@ -19,19 +19,10 @@ import com.hackillinois.snapchatUIComposeClone.R
 import com.hackillinois.snapchatUIComposeClone.common.components.CustomBottomNavigation
 import com.hackillinois.snapchatUIComposeClone.common.components.CustomTopBar
 import com.hackillinois.snapchatUIComposeClone.common.config.navigationConfig
-import com.hackillinois.snapchatUIComposeClone.common.models.Memory
 import com.hackillinois.snapchatUIComposeClone.common.utils.Navigation
 import com.hackillinois.snapchatUIComposeClone.common.utils.topBarFormatter
 import com.hackillinois.snapchatUIComposeClone.ui.theme.ComposeSnapChatUITheme
-import io.realm.kotlin.Realm
-import io.realm.kotlin.RealmConfiguration
-import io.realm.kotlin.query.RealmResults
-import io.realm.kotlin.query.find;
-import io.realm.kotlin.*;
-import io.realm.kotlin.mongodb.App
-import io.realm.kotlin.mongodb.Credentials
-import io.realm.kotlin.mongodb.sync.SyncConfiguration
-import kotlinx.coroutines.runBlocking
+import io.realm.kotlin.*
 
 class MainActivity : ComponentActivity() {
     @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
@@ -75,36 +66,5 @@ class MainActivity : ComponentActivity() {
         }
         // TODO how to pass this location provider (or just the last known location) down to the SnapMapScreen?
         // val fusedLocationClient = LocationServices.getFusedLocationProviderClient(this)
-
-        println("Making app")
-
-        val app = App.create("hackillinois2023-sync-sbyce")
-
-        println("Going to runBlocking")
-        val realm = runBlocking {
-
-
-            val user = app.login(Credentials.apiKey("cv7ZZpsFcTxiIaQiWwIyRzEuX9F06GvGqINfUroGuqUIx7CSf8MUAcVdl6eDhZPx"))
-
-
-            println("Building config")
-//            val user = app.login(Credentials.anonymous())
-            val config = SyncConfiguration.Builder(user, setOf(Memory::class))
-                .maxNumberOfActiveVersions(10)
-                .name("Memcache")
-                .initialSubscriptions { realm ->
-                    add(
-                        realm.query(Memory::class), // subscribe to all Memory objects
-                        "Memory subscription"
-                    )
-                }
-                .build()
-
-            println("Opening Realm")
-            Realm.open(config).also {println("Successfully opened realm: ${it.configuration}") }
-        }
-
-        val items: RealmResults<Memory> = realm.query(Memory::class).find()
-        println("Items: $items")
     }
 }

@@ -13,16 +13,33 @@ data class Location(
 private val SIEBEL = Location(40.11395268359537, -88.22499888074972)
 
 class Memory : RealmObject {
+    /**
+     * The primary key of the memory
+     */
     @PrimaryKey
-    val _id: ObjectId = ObjectId.invoke()
-//    var owner_id: ObjectId = ObjectId.invoke()
-//    var location: Location = SIEBEL
-//    var content: BsonBinary = BsonBinary(byteArrayOf())
+    var _id: ObjectId = ObjectId.invoke()
 
-//    constructor(owner_id: ObjectId, location: Location, content: BsonBinary) : this() {
-//        this.owner_id = owner_id
-//        this.location = location
-//        this.content = content
-//    }
+    /**
+     * The ID of the owner of the memory
+     */
+    var owner_id: ObjectId = ObjectId.invoke()
+
+    /**
+     * The location of the memory
+     */
+    var location: Location = SIEBEL
+
+    /**
+     * The content of the memory
+     */
+    var content: BsonBinary = BsonBinary(byteArrayOf())
+
+    /**
+     * When the memory unlocks, in seconds since epoch
+     */
+    var unlocksAt: Long = 0
+
+    override fun toString(): String =
+        "Memory(_id=$_id, owner_id=$owner_id, location=(${location.latitude},${location.longitude}), content=${content})"
 }
 
