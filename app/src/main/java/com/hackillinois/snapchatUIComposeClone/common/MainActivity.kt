@@ -22,6 +22,7 @@ import com.hackillinois.snapchatUIComposeClone.common.config.navigationConfig
 import com.hackillinois.snapchatUIComposeClone.common.utils.Navigation
 import com.hackillinois.snapchatUIComposeClone.common.utils.topBarFormatter
 import com.hackillinois.snapchatUIComposeClone.ui.theme.ComposeSnapChatUITheme
+import io.realm.kotlin.*
 
 class MainActivity : ComponentActivity() {
     @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
@@ -63,5 +64,7 @@ class MainActivity : ComponentActivity() {
                 ) {}
             }
         }
+        // TODO how to pass this location provider (or just the last known location) down to the SnapMapScreen?
+        // val fusedLocationClient = LocationServices.getFusedLocationProviderClient(this)
     }
 }
