@@ -3,12 +3,8 @@ package com.hackillinois.snapchatUIComposeClone.common.models
 import org.mongodb.kbson.ObjectId
 import io.realm.kotlin.types.RealmObject
 import io.realm.kotlin.types.annotations.PrimaryKey
-import org.mongodb.kbson.BsonBinary
 
-data class Location(
-    val latitude: Double,
-    val longitude: Double
-)
+data class Location(val latitude: Double = 0.0, val longitude: Double = 0.0)
 
 private val SIEBEL = Location(40.11395268359537, -88.22499888074972)
 
@@ -25,21 +21,33 @@ class Memory : RealmObject {
     var owner_id: ObjectId = ObjectId.invoke()
 
     /**
-     * The location of the memory
+     * The name of the memory
      */
-    var location: Location = SIEBEL
+    var name: String = ""
+
+    /**
+     * The latitude of the location of the memory
+     */
+    var latitude: Double = SIEBEL.latitude
+
+    /**
+     * The longitude of the location of the memory
+     */
+    var longitude: Double = SIEBEL.longitude
 
     /**
      * The content of the memory
      */
-    var content: BsonBinary = BsonBinary(byteArrayOf())
+    var content: ByteArray = byteArrayOf()
+
+    var uploadedAt: Long = 0
 
     /**
      * When the memory unlocks, in seconds since epoch
      */
-    var unlocksAt: Long = 0
+    var unlockedAt: Long = 0
 
     override fun toString(): String =
-        "Memory(_id=$_id, owner_id=$owner_id, location=(${location.latitude},${location.longitude}), content=${content})"
+        "Memory(_id=$_id, owner_id=$owner_id, name=${name}, location=(${latitude}, ${longitude}), content=${content}, uploadedAt=${uploadedAt}, unlockedAt=${unlockedAt})"
 }
 
