@@ -45,7 +45,7 @@ import com.hackillinois.snapchatUIComposeClone.features.feature_chat.domain.Last
 @Preview
 @Composable
 fun ChatItemPreview() {
-    ChatItem(
+    MemoryItem(
         modifier = Modifier
             .background(color = Color.White)
             .padding(10.dp),
@@ -72,7 +72,7 @@ fun ChatItemPreview() {
  * @param item
  */
 @Composable
-fun ChatItem(
+fun MemoryItem(
     modifier: Modifier = Modifier,
     item: ChatView
 ) {
@@ -111,7 +111,6 @@ fun ChatItem(
                     modifier = Modifier.clip(RoundedCornerShape(10.dp)),
                     verticalAlignment = Alignment.CenterVertically
                 ) {
-                    ChatTypeItem(item, configuration)
                     Spacer(Modifier.width(10.dp))
                     Box(
                         modifier = Modifier

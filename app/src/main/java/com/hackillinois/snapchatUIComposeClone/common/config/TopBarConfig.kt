@@ -42,25 +42,6 @@ fun topBarConfig(route: String): TopBarItem {
             isBackgroundTransparent = true,
             isAvailable = true,
             lastAction = "Camera Rotate"
-        ),
-        TopBarItem(
-            name = Messages.STORIES_HEADING,
-            textColor = Color.Black,
-            backgroundTintForIcon = ThemeColors.LIGHT_TRANSPARENT,
-            iconTint = ThemeColors.DARK_ICON_TINT,
-            route = Screens.StoriesScreen.route,
-            isAvailable = true,
-            lastAction = "More Action"
-        ),
-        TopBarItem(
-            name = Messages.SPOTLIGHT_HEADING,
-            textColor = ThemeColors.LIGHT_ICON_TINT,
-            backgroundTintForIcon = ThemeColors.DARK_TRANSPARENT,
-            iconTint = ThemeColors.LIGHT_ICON_TINT,
-            route = Screens.SpotlightScreen.route,
-            isBackgroundTransparent = true,
-            isAvailable = false,
-            lastAction = "None"
         )
     )
     return listOfTopBarConfig.find { it.route == route }!!

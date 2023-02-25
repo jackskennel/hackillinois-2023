@@ -20,12 +20,6 @@ fun topBarFormatter(route: String?): TopBarItem {
         Screens.CameraScreen.route -> {
             topBarConfig(Screens.CameraScreen.route)
         }
-        Screens.StoriesScreen.route -> {
-            topBarConfig(Screens.StoriesScreen.route)
-        }
-        Screens.SpotlightScreen.route -> {
-            topBarConfig(Screens.SpotlightScreen.route)
-        }
         else -> {
             topBarConfig(Screens.CameraScreen.route)
         }
