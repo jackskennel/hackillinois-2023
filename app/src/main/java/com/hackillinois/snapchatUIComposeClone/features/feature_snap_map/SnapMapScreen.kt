@@ -53,7 +53,7 @@ fun SnapMapScreen() {
                 ),
                 cameraPositionState = CameraPositionState(
                     CameraPosition(
-                        LatLng(22.5726, 88.3639), 12f, 0f, 0f
+                        LatLng(40.11395268359537, -88.22499888074972), 12f, 0f, 0f
                     )
                 )
             )
