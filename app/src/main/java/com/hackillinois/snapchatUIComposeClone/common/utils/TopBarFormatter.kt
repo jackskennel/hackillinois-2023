@@ -17,8 +17,8 @@ fun topBarFormatter(route: String?): TopBarItem {
         Screens.ChatScreen.route -> {
             topBarConfig(Screens.ChatScreen.route)
         }
-        Screens.CamaraScreen.route -> {
-            topBarConfig(Screens.CamaraScreen.route)
+        Screens.CameraScreen.route -> {
+            topBarConfig(Screens.CameraScreen.route)
         }
         Screens.StoriesScreen.route -> {
             topBarConfig(Screens.StoriesScreen.route)
@@ -27,7 +27,7 @@ fun topBarFormatter(route: String?): TopBarItem {
             topBarConfig(Screens.SpotlightScreen.route)
         }
         else -> {
-            topBarConfig(Screens.CamaraScreen.route)
+            topBarConfig(Screens.CameraScreen.route)
         }
     }
 }

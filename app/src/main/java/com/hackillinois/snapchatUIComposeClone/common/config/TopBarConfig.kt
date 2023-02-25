@@ -38,10 +38,10 @@ fun topBarConfig(route: String): TopBarItem {
             textColor = ThemeColors.LIGHT_ICON_TINT,
             backgroundTintForIcon = ThemeColors.DARK_TRANSPARENT,
             iconTint = ThemeColors.LIGHT_ICON_TINT,
-            route = Screens.CamaraScreen.route,
+            route = Screens.CameraScreen.route,
             isBackgroundTransparent = true,
             isAvailable = true,
-            lastAction = "Camara Rotate"
+            lastAction = "Camera Rotate"
         ),
         TopBarItem(
             name = Messages.STORIES_HEADING,

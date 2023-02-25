@@ -18,14 +18,14 @@ import androidx.compose.ui.unit.dp
 import com.hackillinois.snapchatUIComposeClone.R
 
 /**
- * Custom camara on select item
+ * Custom camera on select item
  *
  * @param color
  * @param configuration
  * @param description
  */
 @Composable
-fun CustomCamaraOnSelectItem(
+fun CustomCameraOnSelectItem(
     color: Color,
     configuration: Configuration,
     description: String
@@ -42,7 +42,7 @@ fun CustomCamaraOnSelectItem(
             modifier = Modifier.padding(top = 4.dp, bottom = 4.dp),
             size = 1.dp,
             tint = color,
-            painter = painterResource(id = R.drawable.ic_camara),
+            painter = painterResource(id = R.drawable.ic_camera),
             factor = 15f,
             badgeColor = color,
             configuration = configuration,

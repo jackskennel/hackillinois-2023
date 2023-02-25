@@ -11,7 +11,7 @@ object Messages {
     const val CHAT_HEADING = "Chat"
     const val SPOTLIGHT_HEADING = "Spotlight"
     const val MEMORIES_HEADING = "Memories"
-    const val CAMARA_HEADING = "Camara"
+    const val CAMERA_HEADING = "Camera"
 
     // Sub Headers
     const val FRIENDS_SUB_HEADING = "Friends"

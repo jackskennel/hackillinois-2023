@@ -12,17 +12,17 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalLifecycleOwner
 import androidx.compose.ui.unit.dp
-import com.hackillinois.snapchatUIComposeClone.features.feature_camera.presentation.components.SimpleCameraPreview
 import com.google.accompanist.permissions.ExperimentalPermissionsApi
+import com.hackillinois.snapchatUIComposeClone.features.feature_camera.presentation.components.SimpleCameraPreview
 
 /**
- * Camara screen
+ * Camera screen
  *
  */
 @ExperimentalAnimationApi
 @ExperimentalPermissionsApi
 @Composable
-fun CamaraScreen() {
+fun CameraScreen() {
     val context = LocalContext.current
     val lifecycleOwner = LocalLifecycleOwner.current
     Surface(

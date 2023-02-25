@@ -11,7 +11,7 @@ HackIllinois 2023 Project
 #### Navigation🚀
 * <a href="https://developer.android.com/jetpack/compose/navigation"> ***androidx.navigation:navigation-compose:2.5.0-alpha03*** </a> <br>The Navigation component provides support for Jetpack Compose applications. You can navigate between composables while taking advantage of the Navigation component’s infrastructure and features.
 * Reference <a href="https://blog.mindorks.com/jetpack-compose-navigation">https://blog.mindorks.com/jetpack-compose-navigation</a>
-#### Camara📸
+#### Camera📸
 camerax_version = "1.1.0-beta02"
 * <a href="https://developer.android.com/jetpack/androidx/releases/camera"> ***androidx.camera:camera-core,androidx.camera:camera-camera2,androidx.camera:camera-lifecycle, androidx.camera:camera-view*** </a>
 * Reference 

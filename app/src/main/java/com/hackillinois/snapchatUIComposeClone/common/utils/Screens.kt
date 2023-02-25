@@ -7,7 +7,7 @@ package com.hackillinois.snapchatUIComposeClone.common.utils
  * @constructor Create empty Screens
  */
 sealed class Screens(val route: String) {
-    object CamaraScreen : Screens("camara")
+    object CameraScreen : Screens("camera")
     object ChatScreen : Screens("chat")
     object MemoriesScreen : Screens("memories")
     object SnapMapScreen : Screens("snapMap")

@@ -14,6 +14,7 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import coil.annotation.ExperimentalCoilApi
+import com.google.accompanist.permissions.ExperimentalPermissionsApi
 import com.hackillinois.snapchatUIComposeClone.R
 import com.hackillinois.snapchatUIComposeClone.common.components.CustomBottomNavigation
 import com.hackillinois.snapchatUIComposeClone.common.components.CustomTopBar
@@ -21,7 +22,6 @@ import com.hackillinois.snapchatUIComposeClone.common.config.navigationConfig
 import com.hackillinois.snapchatUIComposeClone.common.utils.Navigation
 import com.hackillinois.snapchatUIComposeClone.common.utils.topBarFormatter
 import com.hackillinois.snapchatUIComposeClone.ui.theme.ComposeSnapChatUITheme
-import com.google.accompanist.permissions.ExperimentalPermissionsApi
 
 class MainActivity : ComponentActivity() {
     @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")

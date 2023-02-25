@@ -65,8 +65,8 @@ fun CustomBottomNavigation(
                             isBadge = true,
                         )
                     } else {
-                        if (selected && item.name == "Camara") {
-                            CustomCamaraOnSelectItem(
+                        if (selected && item.name == "Camera") {
+                            CustomCameraOnSelectItem(
                                 item.onSelectedColor,
                                 configuration,
                                 item.name
@@ -82,7 +82,7 @@ fun CustomBottomNavigation(
                             )
                         }
                     }
-                    if (selected && item.name != "Camara") {
+                    if (selected && item.name != "Camera") {
                         Icon(
                             modifier = Modifier.height(15.dp),
                             imageVector = Icons.Default.ArrowDropUp,

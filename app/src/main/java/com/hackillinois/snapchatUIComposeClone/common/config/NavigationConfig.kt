@@ -36,8 +36,8 @@ fun navigationConfig(): List<BottomNavItem> {
             onSelectIcon = Icons.Default.ChatBubbleOutline,
         ),
         BottomNavItem(
-            name = Messages.CAMARA_HEADING,
-            route = Screens.CamaraScreen.route,
+            name = Messages.CAMERA_HEADING,
+            route = Screens.CameraScreen.route,
             icon = Icons.Outlined.CameraAlt,
             onSelectedBatchVisible = false,
             onSelectedColor = ThemeColors.YELLOW,

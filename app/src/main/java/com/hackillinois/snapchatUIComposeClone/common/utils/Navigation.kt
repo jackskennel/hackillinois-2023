@@ -12,13 +12,13 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import coil.annotation.ExperimentalCoilApi
-import com.hackillinois.snapchatUIComposeClone.features.feature_camera.CamaraScreen
+import com.google.accompanist.permissions.ExperimentalPermissionsApi
+import com.hackillinois.snapchatUIComposeClone.features.feature_camera.CameraScreen
 import com.hackillinois.snapchatUIComposeClone.features.feature_chat.ChatScreen
 import com.hackillinois.snapchatUIComposeClone.features.feature_memories.MemoriesScreen
 import com.hackillinois.snapchatUIComposeClone.features.feature_snap_map.SnapMapScreen
 import com.hackillinois.snapchatUIComposeClone.features.feature_spotlight.SpotlightScreen
 import com.hackillinois.snapchatUIComposeClone.features.feature_stories.StoriesScreen
-import com.google.accompanist.permissions.ExperimentalPermissionsApi
 
 /**
  * Navigation
@@ -41,7 +41,7 @@ fun Navigation(navController: NavHostController) {
             )
             .padding(bottom = 65.dp),
         navController = navController,
-        startDestination = Screens.CamaraScreen.route
+        startDestination = Screens.CameraScreen.route
     ) {
         composable(Screens.SnapMapScreen.route) {
             FeaturesThatRequireLocationPermission(
@@ -52,10 +52,10 @@ fun Navigation(navController: NavHostController) {
         composable(Screens.ChatScreen.route) {
             ChatScreen()
         }
-        composable(Screens.CamaraScreen.route) {
+        composable(Screens.CameraScreen.route) {
             FeatureThatRequiresCameraPermission(
                 navigateToSettingsScreen = {},
-                content = { CamaraScreen() }
+                content = { CameraScreen() }
             )
         }
         composable(Screens.StoriesScreen.route) {
