@@ -19,7 +19,7 @@
             android:value="${GMP_KEY}"
             />
         <activity
-            android:name="com.debanshu777.snapchatUIComposeClone.common.MainActivity"
+            android:name="com.hackillinois.snapchatUIComposeClone.common.MainActivity"
             android:exported="true"
             android:theme="@style/Theme.AppSplash">
             <intent-filter>
