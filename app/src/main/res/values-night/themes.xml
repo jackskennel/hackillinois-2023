@@ -2,7 +2,7 @@
     <!-- Base application theme. -->
     <style name="Theme.ComposeCameraX" parent="Theme.AppCompat.DayNight.DarkActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/Yellow</item>
+        <item name="colorPrimary">@color/LightRed</item>
         <!-- Status bar color. -->
         <!-- Customize your theme here. -->
     </style>

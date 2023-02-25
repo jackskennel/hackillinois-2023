@@ -84,12 +84,12 @@ fun CustomBottomNavigation(
                     }
                     if (selected && item.name != "Camera") {
                         Icon(
-                            modifier = Modifier.height(15.dp),
+                            modifier = Modifier.height(10.dp),
                             imageVector = Icons.Default.ArrowDropUp,
                             contentDescription = item.name
                         )
                     } else {
-                        Spacer(modifier = Modifier.height(15.dp))
+                        Spacer(modifier = Modifier.height(10.dp))
                     }
                 }
             }
