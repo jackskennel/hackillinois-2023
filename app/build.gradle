@@ -15,7 +15,6 @@ android {
         targetSdk 33
         versionCode 1
         versionName "1.0"
-        manifestPlaceholders=[GMP_KEY: "Google Maps", googleMapApiKey: ""]
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
