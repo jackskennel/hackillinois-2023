@@ -76,9 +76,19 @@ class MainActivity : ComponentActivity() {
         // TODO how to pass this location provider (or just the last known location) down to the SnapMapScreen?
         // val fusedLocationClient = LocationServices.getFusedLocationProviderClient(this)
 
+        println("Making app")
+
         val app = App.create("hackillinois2023-sync-sbyce")
+
+        println("Going to runBlocking")
         val realm = runBlocking {
-            val user = app.login(Credentials.anonymous())
+
+
+            val user = app.login(Credentials.apiKey("cv7ZZpsFcTxiIaQiWwIyRzEuX9F06GvGqINfUroGuqUIx7CSf8MUAcVdl6eDhZPx"))
+
+
+            println("Building config")
+//            val user = app.login(Credentials.anonymous())
             val config = SyncConfiguration.Builder(user, setOf(Memory::class))
                 .maxNumberOfActiveVersions(10)
                 .name("Memcache")
@@ -89,6 +99,8 @@ class MainActivity : ComponentActivity() {
                     )
                 }
                 .build()
+
+            println("Opening Realm")
             Realm.open(config).also {println("Successfully opened realm: ${it.configuration}") }
         }
 
