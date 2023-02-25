@@ -42,22 +42,6 @@ fun navigationConfig(): List<BottomNavItem> {
             onSelectedBatchVisible = false,
             onSelectedColor = ThemeColors.YELLOW,
             onSelectIcon = Icons.Default.CameraAlt,
-        ),
-        BottomNavItem(
-            name = Messages.STORIES_HEADING,
-            route = Screens.StoriesScreen.route,
-            icon = Icons.Outlined.Group,
-            onSelectedBatchVisible = true,
-            onSelectedColor = ThemeColors.PURPLE,
-            onSelectIcon = Icons.Outlined.Group,
-        ),
-        BottomNavItem(
-            name = Messages.SPOTLIGHT_HEADING,
-            route = Screens.SpotlightScreen.route,
-            icon = Icons.Outlined.PlayArrow,
-            onSelectedBatchVisible = false,
-            onSelectedColor = ThemeColors.RED,
-            onSelectIcon = Icons.Outlined.PlayArrow,
         )
     )
 }

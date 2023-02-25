@@ -17,8 +17,6 @@ import com.hackillinois.snapchatUIComposeClone.features.feature_camera.CameraScr
 import com.hackillinois.snapchatUIComposeClone.features.feature_chat.ChatScreen
 import com.hackillinois.snapchatUIComposeClone.features.feature_memories.MemoriesScreen
 import com.hackillinois.snapchatUIComposeClone.features.feature_snap_map.SnapMapScreen
-import com.hackillinois.snapchatUIComposeClone.features.feature_spotlight.SpotlightScreen
-import com.hackillinois.snapchatUIComposeClone.features.feature_stories.StoriesScreen
 
 /**
  * Navigation
@@ -57,12 +55,6 @@ fun Navigation(navController: NavHostController) {
                 navigateToSettingsScreen = {},
                 content = { CameraScreen() }
             )
-        }
-        composable(Screens.StoriesScreen.route) {
-            StoriesScreen()
-        }
-        composable(Screens.SpotlightScreen.route) {
-            SpotlightScreen()
         }
         composable(Screens.MemoriesScreen.route) {
             MemoriesScreen()

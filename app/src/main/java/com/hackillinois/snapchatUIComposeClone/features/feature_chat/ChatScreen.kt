@@ -13,7 +13,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.hackillinois.snapchatUIComposeClone.features.feature_chat.data.dataSource.dummyDataChatViewList
-import com.hackillinois.snapchatUIComposeClone.features.feature_chat.presentation.components.ChatItem
+import com.hackillinois.snapchatUIComposeClone.features.feature_chat.presentation.components.MemoryItem
 
 /**
  * Chat screen
@@ -31,7 +31,7 @@ fun ChatScreen() {
     ) {
         LazyColumn {
             items(chatList.size) { index ->
-                ChatItem(
+                MemoryItem(
                     modifier = Modifier.padding(top = 5.dp, bottom = 5.dp, start = 10.dp, end = 10.dp),
                     chatList[index]
                 )
