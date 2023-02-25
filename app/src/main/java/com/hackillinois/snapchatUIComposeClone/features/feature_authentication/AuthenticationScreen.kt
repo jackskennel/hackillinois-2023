@@ -43,7 +43,7 @@ fun AuthenticationView() {
                 .height(100.dp)
                 .width(50.dp)
                 .align(Alignment.CenterHorizontally),
-            painter = painterResource(R.drawable.snapchat_splash_logo),
+            painter = painterResource(R.drawable.logo_opaque),
             contentDescription = "snapchat_logo"
         )
         Image(
