@@ -1,21 +1,6 @@
-<h1 align="center">
-Snapchat Compose Clone👻
-<br>
-<br>
-<img src="https://github.com/Debanshu777/Compose-Snapchat-Clone/blob/dev/imageAssets/SnapchatGif.gif" width=300 height=300/>
-</h1>
-<h1 align="center">
-  <img src="https://github.com/Debanshu777/Compose-Snapchat-Clone/blob/dev/imageAssets/bannerSnapchat.jpg" width=900 height=300/>
-</h1>
+HackIllinois 2023 Project
 
 ## Background🌟
-
-***Work in progress***
-<p>
-This is UI Clone of Snapchat, which is used to show the power of Jetpack Compose. This a personal project with the goal to learn Clean Architecture with Jetpack compose. I have tried to add all the native components like Camera, Mapview and Exoplayer and showcase as an example.
-<br>
-Jetpack Compose is Android’s modern toolkit for building native UI. It simplifies and accelerates UI development on Android. Quickly bring your app to life with less code, powerful tools, and intuitive Kotlin APIs.
-</p> 
 
 ## Dependencies & References⚡
 
@@ -69,7 +54,6 @@ camerax_version = "1.1.0-beta02"
   - <a href="https://www.youtube.com/watch?v=o384NbCDB0U">https://www.youtube.com/watch?v=o384NbCDB0U</a>
   
 ## Clean architecture
-***I am still learning and understanding clean architecture so it might be perfectly correct***<br>
 In Clean Architecture, instead of relying on Models, you'll communicate with Interactors from the Use Case layer. This layer contains the user interface related code, powered by Android Jetpack!
 The outer circle represents the concrete mechanisms that are specific to the platform such as networking and database access. Moving inward, each circle is more abstract and higher-level. The center circle is the most abstract and contains business logic, which doesn’t rely on the platform or the framework you’re using.<br>
 <img src="https://miro.medium.com/max/772/1*wOmAHDN_zKZJns9YDjtrMw.jpeg" height=200 width=300/>
@@ -77,24 +61,4 @@ The outer circle represents the concrete mechanisms that are specific to the pla
 Refer here for more details and description: 
  - <a href="https://www.raywenderlich.com/3595916-clean-architecture-tutorial-for-android-getting-started">https://www.raywenderlich.com/3595916-clean-architecture-tutorial-for-android-getting-started</a>
  - <a href="https://medium.com/android-dev-hacks/detailed-guide-on-android-clean-architecture-9eab262a9011">https://medium.com/android-dev-hacks/detailed-guide-on-android-clean-architecture-9eab262a9011</a>
- - <a href="https://medium.com/swlh/clean-architecture-in-android-a-beginner-approach-be0ce00d806b">https://medium.com/swlh/clean-architecture-in-android-a-beginner-approach-be0ce00d806b</a>
- 
-## Want to Contribute ?
-
-Awesome! If you want to contribute to this project, you're always welcome!
-Have any questions, doubts or want to present your opinions, views? You're always welcome. You can mail me at <b>debanshudatta123@gmail.com</b> or make an issue.
-Looking for contributors! Don't be shy. 😁 Feel free to open issues/pull requests to help me improve this project.
-
-- When reporting a new Issue, make sure to attach Screenshots, Videos or GIFs of the problem you are reporting.
-- When submitting a new PR, make sure tests are all green. Write new tests if necessary.
-
-## Contributors
-
-- [Debanshu Datta](https://github.com/Debanshu777)
-
-## License
-The Snapchat name, artwork, trademark are all property of Snap Inc. This project is provided for educational purposes only. It is not affiliated with and has not been approved by Snap Inc.
-  
-  
-  
-  
+ - <a href="https://medium.com/swlh/clean-architecture-in-android-a-beginner-approach-be0ce00d806b">https://medium.com/swlh/clean-architecture-in-android-a-beginner-approach-be0ce00d806b</a>  
