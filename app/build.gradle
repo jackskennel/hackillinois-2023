@@ -11,7 +11,7 @@ android {
     compileSdk 33
 
     defaultConfig {
-        applicationId "com.debanshu777.snapchatuicompose"
+        applicationId "com.hackillinois.memcache"
         minSdk 23
         targetSdk 33
         versionCode 1
@@ -48,7 +48,7 @@ android {
             excludes += '/META-INF/{AL2.0,LGPL2.1}'
         }
     }
-    namespace 'com.debanshu777.snapchatUIComposeClone'
+    namespace 'com.hackillinois.snapchatUIComposeClone'
 }
 
 dokkaHtml.configure {
