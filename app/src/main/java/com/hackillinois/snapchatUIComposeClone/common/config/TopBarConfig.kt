@@ -40,7 +40,7 @@ fun topBarConfig(route: String): TopBarItem {
             iconTint = ThemeColors.LIGHT_ICON_TINT,
             route = Screens.CameraScreen.route,
             isBackgroundTransparent = true,
-            isAvailable = true,
+            isAvailable = false,
             lastAction = "Camera Rotate"
         ),
         TopBarItem(
