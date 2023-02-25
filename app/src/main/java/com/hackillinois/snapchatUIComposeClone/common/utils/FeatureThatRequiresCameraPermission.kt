@@ -59,7 +59,7 @@ fun FeatureThatRequiresCameraPermission(
                     Text(
                         modifier = Modifier.padding(bottom = 10.dp),
                         color = MaterialTheme.colorScheme.onPrimaryContainer,
-                        text = "The camera is important for this app. Please grant the permission."
+                        text = "Please grant camera access to take photos in MemCache."
                     )
                     Spacer(modifier = Modifier.height(8.dp))
                     Row(
