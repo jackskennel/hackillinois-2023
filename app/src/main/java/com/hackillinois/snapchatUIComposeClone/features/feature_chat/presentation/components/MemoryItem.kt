@@ -11,6 +11,7 @@ import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.blur
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.asImageBitmap
@@ -18,6 +19,7 @@ import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.hackillinois.snapchatUIComposeClone.common.components.AutoSizeText
@@ -36,15 +38,25 @@ fun MemoryItem(
     item: MemoryView
 ) {
     val configuration = LocalConfiguration.current
-    Card (
+    Card(
         elevation = CardDefaults.cardElevation()
     ) {
-        Image(bitmap = item.bitmap.asImageBitmap(), contentDescription = "fuck shit damn")
-        Column (
+        val isUnlocked = remember { mutableStateOf(item.isUnlocked) }
+        Image(
+            bitmap = item.bitmap.asImageBitmap(), contentDescription = "fuck shit damn",
+            modifier = if (isUnlocked.value) {
+                modifier.blur(10.dp)
+            } else {
+                modifier.blur(0.dp)
+            }
+        )
+
+        Column(
             modifier = Modifier.fillMaxSize(),
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
+            // all text should be left-aligned
             AutoSizeText(
                 factor = 1f,
                 text = item.memoryName,
@@ -56,7 +68,7 @@ fun MemoryItem(
             )
             Row(
                 modifier = Modifier.clip(RoundedCornerShape(10.dp)),
-                verticalAlignment = Alignment.CenterVertically
+                verticalAlignment = Alignment.CenterVertically,
             ) {
                 Box(
                     modifier = Modifier
@@ -74,7 +86,7 @@ fun MemoryItem(
                 )
             }
             Row(
-                verticalAlignment = Alignment.CenterVertically
+
             ) {
                 Box(
                     modifier = Modifier

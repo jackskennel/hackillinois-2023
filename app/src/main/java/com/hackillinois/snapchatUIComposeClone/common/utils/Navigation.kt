@@ -14,7 +14,7 @@ import androidx.navigation.compose.composable
 import coil.annotation.ExperimentalCoilApi
 import com.google.accompanist.permissions.ExperimentalPermissionsApi
 import com.hackillinois.snapchatUIComposeClone.features.feature_camera.CameraScreen
-import com.hackillinois.snapchatUIComposeClone.features.feature_chat.ChatScreen
+import com.hackillinois.snapchatUIComposeClone.features.feature_chat.MemoryScreen
 import com.hackillinois.snapchatUIComposeClone.features.feature_memories.MemoriesScreen
 import com.hackillinois.snapchatUIComposeClone.features.feature_snap_map.SnapMapScreen
 
@@ -48,7 +48,7 @@ fun Navigation(navController: NavHostController) {
             )
         }
         composable(Screens.ChatScreen.route) {
-            ChatScreen()
+            MemoryScreen()
         }
         composable(Screens.CameraScreen.route) {
             FeatureThatRequiresCameraPermission(

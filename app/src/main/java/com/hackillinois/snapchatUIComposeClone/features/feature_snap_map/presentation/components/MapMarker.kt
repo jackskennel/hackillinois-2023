@@ -49,11 +49,19 @@ fun MapMarker(
 
 
     val markerPosition = LatLng(memory.latitude, memory.longitude)
+    // check if the memory is unlocked by comparing the current time to
+    // the date the memory unlocks at
+    val unlocked = memory.unlockedAt < (System.currentTimeMillis() / 1000)
 
+    val icon = if (unlocked) {
+        BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_ORANGE)
+    } else {
+        BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE)
+    }
 
     MarkerInfoWindow(
         state = MarkerState(position = markerPosition),
-        icon = BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_ORANGE),
+        icon = icon,
     ) { marker ->
         Box(
             modifier = Modifier

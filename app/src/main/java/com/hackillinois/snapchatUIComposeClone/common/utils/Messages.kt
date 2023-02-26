@@ -7,7 +7,7 @@ package com.hackillinois.snapchatUIComposeClone.common.utils
 object Messages {
     // Screen Headers
     const val SNAP_HEADING = "MemMap"
-    const val CHAT_HEADING = "Chat"
+    const val CHAT_HEADING = "Memories"
     const val MEMORIES_HEADING = "Memories"
     const val CAMERA_HEADING = "Camera"
 
