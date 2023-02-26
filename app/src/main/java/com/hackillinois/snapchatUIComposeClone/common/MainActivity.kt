@@ -64,7 +64,5 @@ class MainActivity : ComponentActivity() {
                 ) {}
             }
         }
-        // TODO how to pass this location provider (or just the last known location) down to the SnapMapScreen?
-        // val fusedLocationClient = LocationServices.getFusedLocationProviderClient(this)
     }
 }

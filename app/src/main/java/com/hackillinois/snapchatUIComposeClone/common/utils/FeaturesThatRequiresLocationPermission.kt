@@ -40,8 +40,7 @@ fun FeaturesThatRequireLocationPermission(
     content: @Composable () -> Unit
 ) {
     var doNotShowRationale by rememberSaveable { mutableStateOf(false) }
-    val locationPermissionState =
-        rememberPermissionState(Manifest.permission.ACCESS_COARSE_LOCATION)
+    val locationPermissionState = rememberPermissionState(Manifest.permission.ACCESS_COARSE_LOCATION)
     PermissionRequired(
         permissionState = locationPermissionState,
         permissionNotGrantedContent = {
@@ -98,6 +97,64 @@ fun FeaturesThatRequireLocationPermission(
             }
         },
         content = content
+    )
 
+    val fineLocationPermissionState = rememberPermissionState(Manifest.permission.ACCESS_FINE_LOCATION)
+    PermissionRequired(
+        permissionState = fineLocationPermissionState,
+        permissionNotGrantedContent = {
+            if (doNotShowRationale) {
+                Text("Feature not available")
+            } else {
+                Column(
+                    modifier = Modifier
+                        .height(200.dp)
+                        .background(MaterialTheme.colorScheme.primaryContainer)
+                        .padding(10.dp),
+                    horizontalAlignment = Alignment.CenterHorizontally,
+                    verticalArrangement = Arrangement.Bottom
+                ) {
+                    Text(
+                        modifier = Modifier.padding(bottom = 10.dp),
+                        color = MaterialTheme.colorScheme.onPrimaryContainer,
+                        text = "The location is important for this app. Please grant the permission."
+                    )
+                    Spacer(modifier = Modifier.height(8.dp))
+                    Row(
+                        modifier = Modifier.fillMaxWidth(),
+                        horizontalArrangement = Arrangement.Start
+                    ) {
+                        Button(onClick = {
+                            fineLocationPermissionState.launchPermissionRequest()
+                        }) {
+                            Text("Allow")
+                        }
+                        Spacer(Modifier.width(8.dp))
+                        Button(onClick = { doNotShowRationale = true }) {
+                            Text("Deny")
+                        }
+                    }
+                }
+            }
+        },
+        permissionNotAvailableContent = {
+            Column(
+                Modifier
+                    .height(200.dp)
+                    .background(MaterialTheme.colorScheme.primaryContainer)
+                    .padding(10.dp),
+                horizontalAlignment = Alignment.CenterHorizontally
+            ) {
+                Text(
+                    text = "FINE location permission denied. See this FAQ with information about why we " +
+                            "need this permission. Please, grant us access on the Settings screen."
+                )
+                Spacer(modifier = Modifier.height(8.dp))
+                Button(onClick = navigateToSettingsScreen) {
+                    Text("Open Settings")
+                }
+            }
+        },
+        content = content
     )
 }
