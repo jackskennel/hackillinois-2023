@@ -63,7 +63,7 @@ fun FooterUserData(spotlight: MemoryView, modifier: Modifier) {
             ) {
                 val painter = rememberAsyncImagePainter(
                     ImageRequest.Builder(LocalContext.current)
-                        .data(data = "https://avatars.githubusercontent.com/u/50791485?v=4")
+                        .data(data = "https://avatars.githubusercontent.com/u/30608308?v=4")
                         .apply(block = fun ImageRequest.Builder.() {
                             transformations(
                                 CircleCropTransformation()
