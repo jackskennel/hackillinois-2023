@@ -20,6 +20,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.paint
 import androidx.compose.ui.geometry.Offset
+import androidx.compose.ui.graphics.asImageBitmap
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextAlign
@@ -46,15 +47,9 @@ fun MapMarker(
 ) {
 
 
-//    val view = View.inflate(context, R.layout.image_layout, null)
 
     val markerPosition = LatLng(memory.latitude, memory.longitude)
-//    Marker(
-//        state = rememberMarkerState(position = markerPosition),
-//        title = "Marker1",
-//        snippet = "Marker in Singapore",
-//        icon = BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_ORANGE)
-//    )
+
 
     MarkerInfoWindow(
         state = MarkerState(position = markerPosition),
@@ -72,8 +67,9 @@ fun MapMarker(
             ,
         )
         {
+            val bmp = BitmapFactory.decodeByteArray(memory.content, 0, memory.content.size)
             Image(
-                painter = painterResource(id = R.drawable.blanc),
+                bitmap = bmp.asImageBitmap(),
                 contentDescription = null,
                 contentScale = ContentScale.Crop,
                 modifier = Modifier

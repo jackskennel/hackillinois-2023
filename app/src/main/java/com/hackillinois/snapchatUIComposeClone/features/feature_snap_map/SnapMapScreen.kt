@@ -63,9 +63,11 @@ fun SnapMapScreen() {
 
                 Log.d("SnapMapScreen", "memories: ${memories.toString()}")
 
-                memories.forEach { memory: Memory ->
-                    Log.d("SnapMapScreen", "memory: ${memory.toString()}")
-                    val markerPosition = LatLng(memory.latitude, memory.longitude)
+                // filter non-null content
+                memories.filter{
+                        memory -> memory.content.isNotEmpty()
+                }.forEach { memory: Memory ->
+                    Log.d("SnapMapScreen", "memory: ${memory}")
 
                     MapMarker(
                         context = LocalContext.current,
