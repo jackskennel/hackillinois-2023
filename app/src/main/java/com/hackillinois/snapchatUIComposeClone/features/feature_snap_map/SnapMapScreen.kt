@@ -1,5 +1,7 @@
 package com.hackillinois.snapchatUIComposeClone.features.feature_snap_map
 
+
+import android.util.Log
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -13,16 +15,18 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.google.android.gms.maps.model.BitmapDescriptorFactory
 import com.google.android.gms.maps.model.CameraPosition
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MapStyleOptions
-import com.google.maps.android.compose.CameraPositionState
-import com.google.maps.android.compose.GoogleMap
-import com.google.maps.android.compose.MapProperties
-import com.google.maps.android.compose.MapUiSettings
+import com.google.maps.android.compose.*
 import com.hackillinois.snapchatUIComposeClone.R
+import com.hackillinois.snapchatUIComposeClone.common.models.Memory
+import com.hackillinois.snapchatUIComposeClone.common.utils.RealmProvider
 import com.hackillinois.snapchatUIComposeClone.common.utils.ThemeColors
 import com.hackillinois.snapchatUIComposeClone.features.feature_snap_map.presentation.components.MapBottomNavigation
+import com.hackillinois.snapchatUIComposeClone.features.feature_snap_map.presentation.components.MapMarker
+
 
 @Composable
 @Preview
@@ -52,7 +56,25 @@ fun SnapMapScreen() {
                         LatLng(40.11395268359537, -88.22499888074972), 12f, 0f, 0f
                     )
                 )
-            )
+            ){
+                // make request to db
+                val realm = RealmProvider().getRealm()
+                val memories = realm.query(Memory::class).find()
+
+                Log.d("SnapMapScreen", "memories: ${memories.toString()}")
+
+                // filter non-null content
+                memories.filter{
+                        memory -> memory.content.isNotEmpty()
+                }.forEach { memory: Memory ->
+                    Log.d("SnapMapScreen", "memory: ${memory}")
+
+                    MapMarker(
+                        context = LocalContext.current,
+                        memory = memory
+                    )
+                }
+            }
             Box(
                 modifier = Modifier
                     .rotate(180f)
