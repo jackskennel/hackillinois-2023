@@ -33,7 +33,7 @@ fun ChatScreen() {
             items(chatList.size) { index ->
                 MemoryItem(
                     modifier = Modifier.padding(top = 5.dp, bottom = 5.dp, start = 10.dp, end = 10.dp),
-                    chatList[index]
+                    item = chatList[index]
                 )
             }
         }
