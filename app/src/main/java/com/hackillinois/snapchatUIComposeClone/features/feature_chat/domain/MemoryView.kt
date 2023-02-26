@@ -1,5 +1,6 @@
 package com.hackillinois.snapchatUIComposeClone.features.feature_chat.domain
 
+import android.graphics.Bitmap
 import java.util.Date
 
 /**
@@ -14,7 +15,7 @@ import java.util.Date
  */
 data class MemoryView (
     val ownerId: String,
-    val image: Int,
+    val bitmap: Bitmap,
     val memoryName: String,
     val datePosted: Date,
     val dateUnlocked: Date,
