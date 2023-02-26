@@ -35,7 +35,7 @@ fun MapMarker(
         state = rememberMarkerState(position = markerPosition),
         title = if(memory.name.isEmpty()) "Memory" else memory.name,
         snippet = "Unlocks at ${memory.unlockedAt}",
-        anchor = Offset(0.5f, 1f),
+//        anchor = Offset(0.5f, 1f),
         icon = BitmapDescriptorFactory.defaultMarker(),
         onClick = {
             Log.d("MapMarker", "Clicked on marker")

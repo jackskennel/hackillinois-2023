@@ -66,12 +66,7 @@ fun SnapMapScreen() {
                 memories.forEach { memory: Memory ->
                     Log.d("SnapMapScreen", "memory: ${memory.toString()}")
                     val markerPosition = LatLng(memory.latitude, memory.longitude)
-//                    Marker(
-//                        state = rememberMarkerState(position = markerPosition),
-//                        title = if (memory.name.isEmpty()) "Memory" else memory.name,
-//                        snippet = "Unlocks at ${memory.unlockedAt.toString()}",
-////                        icon = BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_ORANGE)
-//                    )
+
                     MapMarker(
                         context = LocalContext.current,
                         memory = memory
