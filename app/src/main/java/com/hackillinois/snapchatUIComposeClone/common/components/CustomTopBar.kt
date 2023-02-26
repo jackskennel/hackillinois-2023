@@ -68,40 +68,6 @@ fun CustomTopBar(
             }
         },
         navigationIcon = {
-            Row {
-                Box(
-                    modifier = Modifier
-                        .size(40.dp)
-                        .clip(CircleShape)
-                        .background(topBarItem.backgroundTintForIcon)
-                ) {
-                    Image(
-                        modifier = Modifier
-                            .size(40.dp)
-                            .clip(CircleShape),
-                        painter = painterResource(R.drawable.bitmoji),
-                        contentDescription = "Content description for visually bitmoji"
-                    )
-                }
-                Spacer(modifier = Modifier.width(10.dp))
-                Box(
-                    contentAlignment = Alignment.Center,
-                    modifier = Modifier
-                        .size(40.dp)
-                        .clip(CircleShape)
-                        .background(topBarItem.backgroundTintForIcon)
-                ) {
-                    AutoSizeIcon(
-                        size = 1.dp,
-                        icon = Icons.Default.Search,
-                        factor = 17f,
-                        tint = topBarItem.iconTint,
-                        badgeColor = Color.White,
-                        configuration = configuration,
-                        contentDescription = "Search",
-                    )
-                }
-            }
         }
     )
 }

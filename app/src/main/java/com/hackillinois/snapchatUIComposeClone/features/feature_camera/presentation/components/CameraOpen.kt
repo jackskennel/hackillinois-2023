@@ -2,10 +2,11 @@ package com.hackillinois.snapchatUIComposeClone.features.feature_camera.presenta
 
 import android.content.Context
 import android.net.Uri
-import androidx.camera.core.Camera
-import androidx.camera.core.CameraSelector
-import androidx.camera.core.ImageCapture
-import androidx.camera.core.Preview
+import android.os.Build
+import android.util.Log
+import androidx.annotation.RequiresApi
+import androidx.camera.core.*
+import androidx.camera.core.ImageCapture.OutputFileOptions
 import androidx.camera.lifecycle.ProcessCameraProvider
 import androidx.camera.view.PreviewView
 import androidx.compose.foundation.background
@@ -45,6 +46,7 @@ import androidx.core.content.ContextCompat
 import androidx.lifecycle.LifecycleOwner
 import com.hackillinois.snapchatUIComposeClone.common.components.AutoSizeIcon
 import com.hackillinois.snapchatUIComposeClone.common.utils.ThemeColors
+import java.io.ByteArrayOutputStream
 
 /**
  * Simple camera preview
@@ -73,6 +75,14 @@ fun SimpleCameraPreview(
     val executor = ContextCompat.getMainExecutor(context)
     var cameraSelector: CameraSelector?
     val cameraProvider = cameraProviderFuture.get()
+
+    val showFinalizePhotoDialog = remember { mutableStateOf(false) }
+    val photoBytes = remember { mutableStateOf(byteArrayOf()) }
+
+    if (showFinalizePhotoDialog.value) {
+        Log.d("CAMERA", photoBytes.value.size.toString())
+        FinalizePhotoDialog(photoBytes.value)
+    }
 
     Box {
         AndroidView(
@@ -116,6 +126,7 @@ fun SimpleCameraPreview(
         ) {
             IconButton(
                 onClick = {
+                    Log.d("CLICKER", "click flash")
                     camera?.let {
                         if (it.cameraInfo.hasFlashUnit()) {
                             flashEnabled = !flashEnabled
@@ -138,9 +149,28 @@ fun SimpleCameraPreview(
                 )
             }
             Spacer(modifier = Modifier.width(20.dp))
+
             Button(
                 onClick = {
-                    imageCapture ?: return@Button
+                    Log.d("CAMERA", "Taking a photo")
+                    val byteArrayOutputStream = ByteArrayOutputStream()
+                    val outputFileOptions = OutputFileOptions.Builder(byteArrayOutputStream).build()
+
+                    imageCapture?.takePicture(outputFileOptions, executor, object: ImageCapture.OnImageSavedCallback {
+                        @RequiresApi(Build.VERSION_CODES.N)
+                        override fun onImageSaved(outputFileResults: ImageCapture.OutputFileResults) {
+                            photoBytes.value = byteArrayOutputStream.toByteArray()
+
+                            Log.d("CAMERA", outputFileResults.savedUri.toString())
+                            Log.d("CAMERA", photoBytes.value.size.toString())
+
+                            showFinalizePhotoDialog.value = true
+                        }
+
+                        override fun onError(exception: ImageCaptureException) {
+                            Log.d("CAMERA", "Shit fuck damn")
+                        }
+                    })
                 },
                 modifier = Modifier
                     .size(90.dp)
@@ -154,6 +184,8 @@ fun SimpleCameraPreview(
             Spacer(modifier = Modifier.width(20.dp))
             IconButton(
                 onClick = {
+                    Log.d("CLICKER", "click lens button")
+
                     lensFacing = if (lensFacing == CameraSelector.LENS_FACING_BACK) CameraSelector.LENS_FACING_FRONT
                     else CameraSelector.LENS_FACING_BACK
 

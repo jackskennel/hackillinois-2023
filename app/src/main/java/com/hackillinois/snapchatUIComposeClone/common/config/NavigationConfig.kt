@@ -2,6 +2,7 @@ package com.hackillinois.snapchatUIComposeClone.common.config
 
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.CameraAlt
+import androidx.compose.material.icons.filled.CameraRoll
 import androidx.compose.material.icons.filled.ChatBubbleOutline
 import androidx.compose.material.icons.outlined.CameraAlt
 import androidx.compose.material.icons.outlined.Group
@@ -30,7 +31,7 @@ fun navigationConfig(): List<BottomNavItem> {
         BottomNavItem(
             name = Messages.CHAT_HEADING,
             route = Screens.ChatScreen.route,
-            icon = Icons.Default.ChatBubbleOutline,
+            icon = Icons.Default.CameraRoll,
             onSelectedBatchVisible = true,
             onSelectedColor = ThemeColors.BLUE,
             onSelectIcon = Icons.Default.ChatBubbleOutline,
